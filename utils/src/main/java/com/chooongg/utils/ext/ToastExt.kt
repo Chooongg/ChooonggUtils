@@ -60,6 +60,7 @@ fun showToast(
 ) {
     cancelToast()
     basicToast = Toast.makeText(APPLICATION, resId, duration).apply {
+        setGravity(gravity, xOffset, yOffset)
         show()
     }
 }
