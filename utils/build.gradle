@@ -1,0 +1,46 @@
+plugins {
+    id 'com.android.library'
+    id 'org.jetbrains.kotlin.android'
+}
+
+android {
+    namespace 'com.chooongg.utils'
+    compileSdk 34
+
+    defaultConfig {
+        minSdk 24
+        targetSdk 34
+        consumerProguardFiles "consumer-rules.pro"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
+    }
+    kotlinOptions {
+        jvmTarget = '11'
+    }
+}
+
+dependencies {
+    implementation 'androidx.core:core-ktx:1.10.1'
+    implementation 'androidx.appcompat:appcompat:1.7.0-alpha02'
+    implementation 'com.google.android.material:material:1.10.0-alpha04'
+    api 'androidx.startup:startup-runtime:1.2.0-alpha02'
+    api 'com.tencent:mmkv:1.2.14'
+}
+
+ext {
+    GROUP_ID = 'com.chooongg.utils'
+    ARTIFACT_ID = 'utils'
+    DESCRIPTION = 'Simplify android development with powerful utils'
+    URL_INFIX = 'github.com/Chooongg/StateLayout'
+    GIT_INFIX = 'github.com:Chooongg/StateLayout'
+}
+apply from: '../publish.gradle'
