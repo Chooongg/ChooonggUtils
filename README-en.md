@@ -7,27 +7,28 @@
 
 </div>
 
-# ChooonggUtils
+# StateLayout
 
-- 基于 2022.1.1 Patch 2 和 AndroidX 构建.
-- 请同时阅读 [issues](https://github.com/Chooongg/ChooonggUtils/issues)
-  和 [releases](https://github.com/Chooongg/ChooonggUtils/releases).
+- built on 2022.1.1 Patch 2 with AndroidX.
+- Please read also [issues](https://github.com/Chooongg/ChooonggUtils/issues)
+  and [releases](https://github.com/Chooongg/ChooonggUtils/releases).
 
-[ [ENGLISH](README-en.md) ]
+[ [中文](README.md) ]
 
-## 安装
+## Setup
 
 #### Gradle
 
-在模块的 “build.gradle” 文件中，将此实现语句添加到 “dependencies” 部分:
+On your module's `build.gradle` file add this implementation statement to the `dependencies`
+section:
 
 ```groovy
 dependencies {
-  implementation "com.chooongg.utils:utils:$version"
+    implementation "com.chooongg.utils:utils:$version"
 }
 ```
 
-## 许可证
+## License
 
 ```
 Copyright (C) 2023 Drake, Inc.
