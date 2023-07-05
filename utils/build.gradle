@@ -31,9 +31,8 @@ android {
 dependencies {
     implementation 'androidx.core:core-ktx:1.10.1'
     implementation 'androidx.appcompat:appcompat:1.7.0-alpha02'
-    implementation 'com.google.android.material:material:1.10.0-alpha04'
+    implementation 'com.google.android.material:material:1.10.0-alpha05'
     api 'androidx.startup:startup-runtime:1.2.0-alpha02'
-    api 'com.tencent:mmkv:1.2.14'
 }
 
 ext {
