@@ -3,7 +3,6 @@ package com.chooongg.utils.ext
 import android.widget.Toast
 import androidx.annotation.GravityInt
 import androidx.annotation.StringRes
-import com.chooongg.utils.ACTIVITY_STACK_TOP
 import com.chooongg.utils.APPLICATION
 
 /**

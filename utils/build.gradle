@@ -36,7 +36,7 @@ dependencies {
 }
 
 ext {
-    GROUP_ID = 'com.chooongg.utils'
+    GROUP_ID = 'com.chooongg'
     ARTIFACT_ID = 'utils'
     DESCRIPTION = 'Simplify android development with powerful utils'
     URL_INFIX = 'github.com/Chooongg/ChooonggUtils'

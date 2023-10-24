@@ -9,13 +9,13 @@ import java.util.Date
 import java.util.Locale
 
 object TimeConstants {
-    const val MSEC = 1
+    const val MILLISECOND = 1
     const val SEC = 1000
     const val MIN = 60000
     const val HOUR = 3600000
     const val DAY = 86400000
 
-    @IntDef(MSEC, SEC, MIN, HOUR, DAY)
+    @IntDef(MILLISECOND, SEC, MIN, HOUR, DAY)
     annotation class Unit
 }
 
@@ -219,7 +219,7 @@ object TimeUtils {
     /**
      * 根据单位返回与当前时间跨度
      * pattern = `yyyy-MM-dd HH:mm:ss`
-     *  * [TimeConstants.MSEC]
+     *  * [TimeConstants.MILLISECOND]
      *  * [TimeConstants.SEC]
      *  * [TimeConstants.MIN]
      *  * [TimeConstants.HOUR]
@@ -230,7 +230,7 @@ object TimeUtils {
 
     /**
      * 根据单位返回与当前时间跨度
-     *  * [TimeConstants.MSEC]
+     *  * [TimeConstants.MILLISECOND]
      *  * [TimeConstants.SEC]
      *  * [TimeConstants.MIN]
      *  * [TimeConstants.HOUR]
@@ -244,7 +244,7 @@ object TimeUtils {
 
     /**
      * 根据单位返回与当前时间跨度
-     *  * [TimeConstants.MSEC]
+     *  * [TimeConstants.MILLISECOND]
      *  * [TimeConstants.SEC]
      *  * [TimeConstants.MIN]
      *  * [TimeConstants.HOUR]
@@ -255,7 +255,7 @@ object TimeUtils {
 
     /**
      * 根据单位返回与当前时间跨度
-     *  * [TimeConstants.MSEC]
+     *  * [TimeConstants.MILLISECOND]
      *  * [TimeConstants.SEC]
      *  * [TimeConstants.MIN]
      *  * [TimeConstants.HOUR]
@@ -456,7 +456,7 @@ object TimeUtils {
      * @param timeSpan The time span.
      * @param unit     The unit of time span.
      *
-     *  * [TimeConstants.MSEC]
+     *  * [TimeConstants.MILLISECOND]
      *  * [TimeConstants.SEC]
      *  * [TimeConstants.MIN]
      *  * [TimeConstants.HOUR]
@@ -479,7 +479,7 @@ object TimeUtils {
      * @param timeSpan The time span.
      * @param unit     The unit of time span.
      *
-     *  * [TimeConstants.MSEC]
+     *  * [TimeConstants.MILLISECOND]
      *  * [TimeConstants.SEC]
      *  * [TimeConstants.MIN]
      *  * [TimeConstants.HOUR]
@@ -501,7 +501,7 @@ object TimeUtils {
      * @param timeSpan The time span.
      * @param unit     The unit of time span.
      *
-     *  * [TimeConstants.MSEC]
+     *  * [TimeConstants.MILLISECOND]
      *  * [TimeConstants.SEC]
      *  * [TimeConstants.MIN]
      *  * [TimeConstants.HOUR]
@@ -523,7 +523,7 @@ object TimeUtils {
      * @param timeSpan The time span.
      * @param unit     The unit of time span.
      *
-     *  * [TimeConstants.MSEC]
+     *  * [TimeConstants.MILLISECOND]
      *  * [TimeConstants.SEC]
      *  * [TimeConstants.MIN]
      *  * [TimeConstants.HOUR]
@@ -546,7 +546,7 @@ object TimeUtils {
      * @param timeSpan The time span.
      * @param unit     The unit of time span.
      *
-     *  * [TimeConstants.MSEC]
+     *  * [TimeConstants.MILLISECOND]
      *  * [TimeConstants.SEC]
      *  * [TimeConstants.MIN]
      *  * [TimeConstants.HOUR]
@@ -568,7 +568,7 @@ object TimeUtils {
      * @param timeSpan The time span.
      * @param unit     The unit of time span.
      *
-     *  * [TimeConstants.MSEC]
+     *  * [TimeConstants.MILLISECOND]
      *  * [TimeConstants.SEC]
      *  * [TimeConstants.MIN]
      *  * [TimeConstants.HOUR]
@@ -592,7 +592,7 @@ object TimeUtils {
      * @param timeSpan The time span.
      * @param unit     The unit of time span.
      *
-     *  * [TimeConstants.MSEC]
+     *  * [TimeConstants.MILLISECOND]
      *  * [TimeConstants.SEC]
      *  * [TimeConstants.MIN]
      *  * [TimeConstants.HOUR]
@@ -614,7 +614,7 @@ object TimeUtils {
      * @param timeSpan The time span.
      * @param unit     The unit of time span.
      *
-     *  * [TimeConstants.MSEC]
+     *  * [TimeConstants.MILLISECOND]
      *  * [TimeConstants.SEC]
      *  * [TimeConstants.MIN]
      *  * [TimeConstants.HOUR]
@@ -638,7 +638,7 @@ object TimeUtils {
      * @param timeSpan The time span.
      * @param unit     The unit of time span.
      *
-     *  * [TimeConstants.MSEC]
+     *  * [TimeConstants.MILLISECOND]
      *  * [TimeConstants.SEC]
      *  * [TimeConstants.MIN]
      *  * [TimeConstants.HOUR]
@@ -660,7 +660,7 @@ object TimeUtils {
      * @param timeSpan The time span.
      * @param unit     The unit of time span.
      *
-     *  * [TimeConstants.MSEC]
+     *  * [TimeConstants.MILLISECOND]
      *  * [TimeConstants.SEC]
      *  * [TimeConstants.MIN]
      *  * [TimeConstants.HOUR]
@@ -682,7 +682,7 @@ object TimeUtils {
      * @param timeSpan The time span.
      * @param unit     The unit of time span.
      *
-     *  * [TimeConstants.MSEC]
+     *  * [TimeConstants.MILLISECOND]
      *  * [TimeConstants.SEC]
      *  * [TimeConstants.MIN]
      *  * [TimeConstants.HOUR]
@@ -705,7 +705,7 @@ object TimeUtils {
      * @param timeSpan The time span.
      * @param unit     The unit of time span.
      *
-     *  * [TimeConstants.MSEC]
+     *  * [TimeConstants.MILLISECOND]
      *  * [TimeConstants.SEC]
      *  * [TimeConstants.MIN]
      *  * [TimeConstants.HOUR]
@@ -727,7 +727,7 @@ object TimeUtils {
      * @param timeSpan The time span.
      * @param unit     The unit of time span.
      *
-     *  * [TimeConstants.MSEC]
+     *  * [TimeConstants.MILLISECOND]
      *  * [TimeConstants.SEC]
      *  * [TimeConstants.MIN]
      *  * [TimeConstants.HOUR]
@@ -749,7 +749,7 @@ object TimeUtils {
      * @param timeSpan The time span.
      * @param unit     The unit of time span.
      *
-     *  * [TimeConstants.MSEC]
+     *  * [TimeConstants.MILLISECOND]
      *  * [TimeConstants.SEC]
      *  * [TimeConstants.MIN]
      *  * [TimeConstants.HOUR]
@@ -769,7 +769,7 @@ object TimeUtils {
      * @param timeSpan The time span.
      * @param unit     The unit of time span.
      *
-     *  * [TimeConstants.MSEC]
+     *  * [TimeConstants.MILLISECOND]
      *  * [TimeConstants.SEC]
      *  * [TimeConstants.MIN]
      *  * [TimeConstants.HOUR]
@@ -788,7 +788,7 @@ object TimeUtils {
      * @param timeSpan The time span.
      * @param unit     The unit of time span.
      *
-     *  * [TimeConstants.MSEC]
+     *  * [TimeConstants.MILLISECOND]
      *  * [TimeConstants.SEC]
      *  * [TimeConstants.MIN]
      *  * [TimeConstants.HOUR]
@@ -806,7 +806,7 @@ object TimeUtils {
      * @param format   The format.
      * @param unit     The unit of time span.
      *
-     *  * [TimeConstants.MSEC]
+     *  * [TimeConstants.MILLISECOND]
      *  * [TimeConstants.SEC]
      *  * [TimeConstants.MIN]
      *  * [TimeConstants.HOUR]
@@ -826,7 +826,7 @@ object TimeUtils {
      * @param timeSpan The time span.
      * @param unit     The unit of time span.
      *
-     *  * [TimeConstants.MSEC]
+     *  * [TimeConstants.MILLISECOND]
      *  * [TimeConstants.SEC]
      *  * [TimeConstants.MIN]
      *  * [TimeConstants.HOUR]

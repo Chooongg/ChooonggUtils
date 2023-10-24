@@ -37,20 +37,6 @@ object DeviceUtils {
     }
 
     /**
-     * 设备系统的版本名称
-     */
-    fun getSDKVersionName(): String? {
-        return Build.VERSION.RELEASE
-    }
-
-    /**
-     * 设备系统的版本号
-     */
-    fun getSDKVersionCode(): Int {
-        return Build.VERSION.SDK_INT
-    }
-
-    /**
      * Return whether device is emulator.
      *
      * @return `true`: yes<br></br>`false`: no

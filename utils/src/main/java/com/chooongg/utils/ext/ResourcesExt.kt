@@ -1,33 +1,49 @@
 package com.chooongg.utils.ext
 
 import android.content.Context
+import android.content.res.ColorStateList
+import android.graphics.Typeface
+import android.graphics.drawable.Drawable
 import android.util.TypedValue
 import android.view.View
 import android.view.animation.Animation
 import android.view.animation.AnimationUtils
-import androidx.annotation.*
+import androidx.annotation.AnimRes
+import androidx.annotation.AnyRes
+import androidx.annotation.ArrayRes
+import androidx.annotation.BoolRes
+import androidx.annotation.ColorRes
+import androidx.annotation.DimenRes
+import androidx.annotation.DrawableRes
+import androidx.annotation.FontRes
+import androidx.annotation.FractionRes
+import androidx.annotation.IntegerRes
+import androidx.annotation.PluralsRes
+import androidx.annotation.RawRes
+import androidx.annotation.StringRes
 import androidx.core.content.res.ResourcesCompat
 import androidx.fragment.app.Fragment
+import java.io.InputStream
 
-fun Context.resText(@StringRes id: Int) =
+fun Context.resText(@StringRes id: Int): CharSequence =
     resources.getText(id)
 
-fun Context.resFont(@FontRes id: Int) =
+fun Context.resFont(@FontRes id: Int): Typeface? =
     ResourcesCompat.getFont(this, id)
 
-fun Context.resQuantityText(@PluralsRes id: Int, quantity: Int) =
+fun Context.resQuantityText(@PluralsRes id: Int, quantity: Int): CharSequence =
     resources.getQuantityText(id, quantity)
 
-fun Context.resString(@StringRes id: Int) =
+fun Context.resString(@StringRes id: Int): String =
     resources.getString(id)
 
-fun Context.resString(@StringRes id: Int, vararg format: Any?) =
+fun Context.resString(@StringRes id: Int, vararg format: Any?): String =
     resources.getString(id, *format)
 
-fun Context.resQuantityString(@PluralsRes id: Int, quantity: Int, vararg format: Any?) =
+fun Context.resQuantityString(@PluralsRes id: Int, quantity: Int, vararg format: Any?): String =
     resources.getQuantityString(id, quantity, *format)
 
-fun Context.resQuantityString(@PluralsRes id: Int, quantity: Int) =
+fun Context.resQuantityString(@PluralsRes id: Int, quantity: Int): String =
     resources.getQuantityString(id, quantity)
 
 fun Context.resText(@StringRes id: Int, def: CharSequence): CharSequence =
@@ -39,40 +55,40 @@ fun Context.resTextArray(@ArrayRes id: Int): Array<CharSequence> =
 fun Context.resStringArray(@ArrayRes id: Int): Array<String> =
     resources.getStringArray(id)
 
-fun Context.resIntArray(@ArrayRes id: Int) =
+fun Context.resIntArray(@ArrayRes id: Int): IntArray =
     resources.getIntArray(id)
 
-fun Context.resDimension(@DimenRes id: Int) =
+fun Context.resDimension(@DimenRes id: Int): Float =
     resources.getDimension(id)
 
-fun Context.resDimensionPixelOffset(@DimenRes id: Int) =
+fun Context.resDimensionPixelOffset(@DimenRes id: Int): Int =
     resources.getDimensionPixelOffset(id)
 
-fun Context.resDimensionPixelSize(@DimenRes id: Int) =
+fun Context.resDimensionPixelSize(@DimenRes id: Int): Int =
     resources.getDimensionPixelSize(id)
 
-fun Context.resFraction(@FractionRes id: Int, base: Int, pbase: Int) =
-    resources.getFraction(id, base, pbase)
+fun Context.resFraction(@FractionRes id: Int, base: Int, pBase: Int): Float =
+    resources.getFraction(id, base, pBase)
 
-fun Context.resDrawable(@DrawableRes id: Int) =
+fun Context.resDrawable(@DrawableRes id: Int): Drawable? =
     ResourcesCompat.getDrawable(resources, id, theme)
 
-fun Context.resColor(@ColorRes id: Int) =
+fun Context.resColor(@ColorRes id: Int): Int =
     ResourcesCompat.getColor(resources, id, theme)
 
-fun Context.resColorStateList(@ColorRes id: Int) =
+fun Context.resColorStateList(@ColorRes id: Int): ColorStateList? =
     ResourcesCompat.getColorStateList(resources, id, theme)
 
-fun Context.resBoolean(@BoolRes id: Int) =
+fun Context.resBoolean(@BoolRes id: Int): Boolean =
     resources.getBoolean(id)
 
-fun Context.resInteger(@IntegerRes id: Int) =
+fun Context.resInteger(@IntegerRes id: Int): Int =
     resources.getInteger(id)
 
-fun Context.resFloat(@DimenRes id: Int) =
+fun Context.resFloat(@DimenRes id: Int): Float =
     ResourcesCompat.getFloat(resources, id)
 
-fun Context.resOpenRaw(@RawRes id: Int) =
+fun Context.resOpenRaw(@RawRes id: Int): InputStream =
     resources.openRawResource(id)
 
 fun Context.resAnimation(@AnimRes id: Int): Animation =
@@ -124,8 +140,8 @@ fun Fragment.resDimensionPixelOffset(@DimenRes id: Int) =
 fun Fragment.resDimensionPixelSize(@DimenRes id: Int) =
     resources.getDimensionPixelSize(id)
 
-fun Fragment.resFraction(@FractionRes id: Int, base: Int, pbase: Int) =
-    resources.getFraction(id, base, pbase)
+fun Fragment.resFraction(@FractionRes id: Int, base: Int, pBase: Int) =
+    resources.getFraction(id, base, pBase)
 
 fun Fragment.resDrawable(@DrawableRes id: Int) =
     ResourcesCompat.getDrawable(resources, id, requireContext().theme)
@@ -197,8 +213,8 @@ fun View.resDimensionPixelOffset(@DimenRes id: Int) =
 fun View.resDimensionPixelSize(@DimenRes id: Int) =
     resources.getDimensionPixelSize(id)
 
-fun View.resFraction(@FractionRes id: Int, base: Int, pbase: Int) =
-    resources.getFraction(id, base, pbase)
+fun View.resFraction(@FractionRes id: Int, base: Int, pBase: Int) =
+    resources.getFraction(id, base, pBase)
 
 fun View.resDrawable(@DrawableRes id: Int) =
     ResourcesCompat.getDrawable(resources, id, context.theme)

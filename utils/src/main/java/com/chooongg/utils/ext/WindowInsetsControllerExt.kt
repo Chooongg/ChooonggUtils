@@ -15,8 +15,7 @@ fun Window.getWindowInsetsController() = WindowCompat.getInsetsController(this, 
  */
 fun Fragment.showSystemBars() = activity?.showSystemBars()
 fun Activity.showSystemBars() {
-    WindowCompat.getInsetsController(window, window.decorView)
-        .show(WindowInsetsCompat.Type.systemBars())
+    window.getWindowInsetsController().show(WindowInsetsCompat.Type.systemBars())
 }
 
 /**
@@ -24,8 +23,7 @@ fun Activity.showSystemBars() {
  */
 fun Fragment.hideSystemBars() = activity?.hideSystemBars()
 fun Activity.hideSystemBars() {
-    WindowCompat.getInsetsController(window, window.decorView)
-        .hide(WindowInsetsCompat.Type.systemBars())
+    window.getWindowInsetsController().hide(WindowInsetsCompat.Type.systemBars())
 }
 
 /**
@@ -33,8 +31,7 @@ fun Activity.hideSystemBars() {
  */
 fun Fragment.showStatusBars() = activity?.showStatusBars()
 fun Activity.showStatusBars() {
-    WindowCompat.getInsetsController(window, window.decorView)
-        .show(WindowInsetsCompat.Type.statusBars())
+    window.getWindowInsetsController().show(WindowInsetsCompat.Type.statusBars())
 }
 
 /**
@@ -42,8 +39,7 @@ fun Activity.showStatusBars() {
  */
 fun Fragment.hideStatusBars() = activity?.hideStatusBars()
 fun Activity.hideStatusBars() {
-    WindowCompat.getInsetsController(window, window.decorView)
-        .hide(WindowInsetsCompat.Type.statusBars())
+    window.getWindowInsetsController().hide(WindowInsetsCompat.Type.statusBars())
 }
 
 /**
@@ -51,8 +47,7 @@ fun Activity.hideStatusBars() {
  */
 fun Fragment.showNavigationBars() = activity?.showNavigationBars()
 fun Activity.showNavigationBars() {
-    WindowCompat.getInsetsController(window, window.decorView)
-        .show(WindowInsetsCompat.Type.navigationBars())
+    window.getWindowInsetsController().show(WindowInsetsCompat.Type.navigationBars())
 }
 
 /**
@@ -60,8 +55,7 @@ fun Activity.showNavigationBars() {
  */
 fun Fragment.hideNavigationBars() = activity?.hideNavigationBars()
 fun Activity.hideNavigationBars() {
-    WindowCompat.getInsetsController(window, window.decorView)
-        .hide(WindowInsetsCompat.Type.navigationBars())
+    window.getWindowInsetsController().hide(WindowInsetsCompat.Type.navigationBars())
 }
 
 /**
@@ -71,9 +65,7 @@ fun Fragment.showIME(view: View? = null) = activity?.showIME(view)
 fun View.showIME() = context.showIME(this)
 fun Context.showIME(view: View? = null) {
     view?.requestFocus()
-    val activity = getActivity() ?: return
-    WindowCompat.getInsetsController(activity.window, activity.window.decorView)
-        .show(WindowInsetsCompat.Type.ime())
+    getActivity()?.window?.getWindowInsetsController()?.show(WindowInsetsCompat.Type.ime())
 }
 
 /**
@@ -81,20 +73,17 @@ fun Context.showIME(view: View? = null) {
  */
 fun Fragment.hideIME() = activity?.hideIME()
 fun Context.hideIME() {
-    val activity = getActivity() ?: return
-    WindowCompat.getInsetsController(activity.window, activity.window.decorView)
-        .hide(WindowInsetsCompat.Type.ime())
+    getActivity()?.window?.getWindowInsetsController()?.hide(WindowInsetsCompat.Type.ime())
 }
 
 /**
  * 设置亮色状态栏
  */
 fun Fragment.setLightStatusBars(isLightMode: Boolean) =
-    requireActivity().setLightStatusBars(isLightMode)
+    activity?.setLightStatusBars(isLightMode)
 
 fun Activity.setLightStatusBars(isLightMode: Boolean) {
-    WindowCompat.getInsetsController(window, window.decorView).isAppearanceLightStatusBars =
-        isLightMode
+    window.getWindowInsetsController().isAppearanceLightStatusBars = isLightMode
 }
 
 /**
@@ -102,18 +91,17 @@ fun Activity.setLightStatusBars(isLightMode: Boolean) {
  */
 fun Fragment.isLightStatusBars() = activity?.isLightStatusBars()
 fun Activity.isLightStatusBars(): Boolean {
-    return WindowCompat.getInsetsController(window, window.decorView).isAppearanceLightStatusBars
+    return window.getWindowInsetsController().isAppearanceLightStatusBars
 }
 
 /**
  * 设置亮色导航栏
  */
 fun Fragment.setLightNavigationBars(isLightMode: Boolean) =
-    requireActivity().setLightNavigationBars(isLightMode)
+    activity?.setLightNavigationBars(isLightMode)
 
 fun Activity.setLightNavigationBars(isLightMode: Boolean) {
-    WindowCompat.getInsetsController(window, window.decorView).isAppearanceLightNavigationBars =
-        isLightMode
+    window.getWindowInsetsController().isAppearanceLightNavigationBars = isLightMode
 }
 
 /**
@@ -121,6 +109,5 @@ fun Activity.setLightNavigationBars(isLightMode: Boolean) {
  */
 fun Fragment.isLightNavigationBars() = activity?.isLightNavigationBars()
 fun Activity.isLightNavigationBars(): Boolean {
-    return WindowCompat.getInsetsController(window, window.decorView)
-        .isAppearanceLightNavigationBars
+    return window.getWindowInsetsController().isAppearanceLightNavigationBars
 }

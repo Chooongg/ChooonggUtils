@@ -1,7 +1,10 @@
 package com.chooongg.utils.ext
 
 import android.content.Context
+import android.content.res.ColorStateList
 import android.graphics.Color
+import android.graphics.Typeface
+import android.graphics.drawable.Drawable
 import android.os.Build
 import android.view.View
 import androidx.annotation.AttrRes
@@ -11,60 +14,63 @@ import androidx.annotation.StyleRes
 import androidx.core.content.res.use
 import androidx.fragment.app.Fragment
 
-fun Context.resChildText(@StyleRes id: Int, @AttrRes childId: Int) =
+fun Context.resChildText(@StyleRes id: Int, @AttrRes childId: Int): CharSequence? =
     obtainStyledAttributes(id, intArrayOf(childId)).use { it.getText(0) }
 
-fun Context.resChildString(@StyleRes id: Int, @AttrRes childId: Int) =
+fun Context.resChildString(@StyleRes id: Int, @AttrRes childId: Int): String? =
     obtainStyledAttributes(id, intArrayOf(childId)).use { it.getString(0) }
 
-fun Context.resChildString(@StyleRes id: Int, @AttrRes childId: Int, vararg format: Any?) =
+fun Context.resChildString(@StyleRes id: Int, @AttrRes childId: Int, vararg format: Any?): String? =
     obtainStyledAttributes(id, intArrayOf(childId)).use { it.getString(0)?.format(*format) }
 
-fun Context.resChildBoolean(@StyleRes id: Int, @AttrRes childId: Int, defValue: Boolean) =
+fun Context.resChildBoolean(@StyleRes id: Int, @AttrRes childId: Int, defValue: Boolean): Boolean =
     obtainStyledAttributes(id, intArrayOf(childId)).use { it.getBoolean(0, defValue) }
 
-fun Context.resChildInt(@StyleRes id: Int, @AttrRes childId: Int, defValue: Int) =
+fun Context.resChildInt(@StyleRes id: Int, @AttrRes childId: Int, defValue: Int): Int =
     obtainStyledAttributes(id, intArrayOf(childId)).use { it.getInt(0, defValue) }
 
-fun Context.resChildFloat(@StyleRes id: Int, @AttrRes childId: Int, defValue: Float) =
+fun Context.resChildFloat(@StyleRes id: Int, @AttrRes childId: Int, defValue: Float): Float =
     obtainStyledAttributes(id, intArrayOf(childId)).use { it.getFloat(0, defValue) }
 
 fun Context.resChildColor(
     @StyleRes id: Int, @AttrRes childId: Int, @ColorInt defValue: Int = Color.GRAY
-) = obtainStyledAttributes(id, intArrayOf(childId)).use { it.getColor(0, defValue) }
+): Int = obtainStyledAttributes(id, intArrayOf(childId)).use { it.getColor(0, defValue) }
 
-fun Context.resChildColorStateList(@StyleRes id: Int, @AttrRes childId: Int) =
+fun Context.resChildColorStateList(@StyleRes id: Int, @AttrRes childId: Int): ColorStateList? =
     obtainStyledAttributes(id, intArrayOf(childId)).use { it.getColorStateList(0) }
 
-fun Context.resChildInteger(@StyleRes id: Int, @AttrRes childId: Int, defValue: Int) =
+fun Context.resChildInteger(@StyleRes id: Int, @AttrRes childId: Int, defValue: Int): Int =
     obtainStyledAttributes(id, intArrayOf(childId)).use { it.getInteger(0, defValue) }
 
-fun Context.resChildDimension(@StyleRes id: Int, @AttrRes childId: Int, defValue: Float) =
+fun Context.resChildDimension(@StyleRes id: Int, @AttrRes childId: Int, defValue: Float): Float =
     obtainStyledAttributes(id, intArrayOf(childId)).use { it.getDimension(0, defValue) }
 
 fun Context.resChildDimensionPixelOffset(
     @StyleRes id: Int, @AttrRes childId: Int, defValue: Int
-) = obtainStyledAttributes(id, intArrayOf(childId)).use { it.getDimensionPixelOffset(0, defValue) }
+): Int =
+    obtainStyledAttributes(id, intArrayOf(childId)).use { it.getDimensionPixelOffset(0, defValue) }
 
 fun Context.resChildDimensionPixelSize(
     @StyleRes id: Int, @AttrRes childId: Int, defValue: Int
-) = obtainStyledAttributes(id, intArrayOf(childId)).use { it.getDimensionPixelSize(0, defValue) }
+): Int =
+    obtainStyledAttributes(id, intArrayOf(childId)).use { it.getDimensionPixelSize(0, defValue) }
 
 fun Context.resChildFraction(
-    @StyleRes id: Int, @AttrRes childId: Int, base: Int, pbase: Int, defValue: Float
-) = obtainStyledAttributes(id, intArrayOf(childId)).use { it.getFraction(0, base, pbase, defValue) }
+    @StyleRes id: Int, @AttrRes childId: Int, base: Int, pBase: Int, defValue: Float
+): Float =
+    obtainStyledAttributes(id, intArrayOf(childId)).use { it.getFraction(0, base, pBase, defValue) }
 
-fun Context.resChildResourcesId(@StyleRes id: Int, @AttrRes childId: Int, defValue: Int) =
+fun Context.resChildResourcesId(@StyleRes id: Int, @AttrRes childId: Int, defValue: Int): Int =
     obtainStyledAttributes(id, intArrayOf(childId)).use { it.getResourceId(0, defValue) }
 
-fun Context.resChildDrawable(@StyleRes id: Int, @AttrRes childId: Int) =
+fun Context.resChildDrawable(@StyleRes id: Int, @AttrRes childId: Int): Drawable? =
     obtainStyledAttributes(id, intArrayOf(childId)).use { it.getDrawable(0) }
 
 @RequiresApi(Build.VERSION_CODES.O)
-fun Context.resChildFont(@StyleRes id: Int, @AttrRes childId: Int) =
+fun Context.resChildFont(@StyleRes id: Int, @AttrRes childId: Int): Typeface? =
     obtainStyledAttributes(id, intArrayOf(childId)).use { it.getFont(0) }
 
-fun Context.resChildTextArray(@StyleRes id: Int, @AttrRes childId: Int) =
+fun Context.resChildTextArray(@StyleRes id: Int, @AttrRes childId: Int): Array<CharSequence>? =
     obtainStyledAttributes(id, intArrayOf(childId)).use { it.getTextArray(0) }
 
 
@@ -107,8 +113,8 @@ fun Fragment.resChildDimensionPixelSize(
 ) = requireContext().resChildDimensionPixelSize(id, childId, defValue)
 
 fun Fragment.resChildFraction(
-    @StyleRes id: Int, @AttrRes childId: Int, base: Int, pbase: Int, defValue: Float
-) = requireContext().resChildFraction(id, childId, base, pbase, defValue)
+    @StyleRes id: Int, @AttrRes childId: Int, base: Int, pBase: Int, defValue: Float
+) = requireContext().resChildFraction(id, childId, base, pBase, defValue)
 
 fun Fragment.resChildResourcesId(@StyleRes id: Int, @AttrRes childId: Int, defValue: Int) =
     requireContext().resChildResourcesId(id, childId, defValue)
@@ -162,8 +168,8 @@ fun View.resChildDimensionPixelSize(@StyleRes id: Int, @AttrRes childId: Int, de
     context.resChildDimensionPixelSize(id, childId, defValue)
 
 fun View.resChildFraction(
-    @StyleRes id: Int, @AttrRes childId: Int, base: Int, pbase: Int, defValue: Float
-) = context.resChildFraction(id, childId, base, pbase, defValue)
+    @StyleRes id: Int, @AttrRes childId: Int, base: Int, pBase: Int, defValue: Float
+) = context.resChildFraction(id, childId, base, pBase, defValue)
 
 fun View.resChildResourcesId(@StyleRes id: Int, @AttrRes childId: Int, defValue: Int) =
     context.resChildResourcesId(id, childId, defValue)

@@ -16,7 +16,7 @@ import androidx.annotation.StyleRes
 class SpannableStyle(val content: CharSequence) {
 
     val styles = mutableListOf(mutableListOf<CharacterStyle>())
-    val textConstructor = mutableListOf(content)
+    private val textConstructor = mutableListOf(content)
 
     /**
      * 追加内容对象
