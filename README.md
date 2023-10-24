@@ -1,7 +1,7 @@
 <div align=center>
     <img src="Screenshots/Logo.svg" width="192" height="192"/> 
 
-[![Download](https://img.shields.io/maven-central/v/com.chooongg.utils/utils.svg)](https://central.sonatype.com/artifact/com.chooongg.widget/statelayout/1.0.3)
+[![Download](https://img.shields.io/maven-central/v/com.chooongg.utils/utils.svg)](https://central.sonatype.com/artifact/com.chooongg.utils/utils/1.0.2)
 [![API](https://img.shields.io/badge/API-24%2B-green.svg?style=flat)](https://android-arsenal.com/api?level=24)
 [![Licence](https://img.shields.io/badge/Licence-Apache2-blue.svg)](http://www.apache.org/licenses/LICENSE-2.0)
 
